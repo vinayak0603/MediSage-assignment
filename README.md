@@ -1,3 +1,7 @@
+# Medi - Project Management System
+
+![Project Demo](https://ik.imagekit.io/vinayak06/Mavnox/Video%20Project%204.mp4)
+
 ## 🚀 Features
 
 - **Project Management**: Create and delete projects.
