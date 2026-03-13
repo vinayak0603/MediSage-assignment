@@ -1,6 +1,6 @@
 # Medi API Documentation
 
-Base URL: `http://localhost:5000/api`
+Base URL: `https://api-assignment-nu.vercel.app/api`
 
 ## 📊 Overview
 All requests should include the header `Content-Type: application/json`. Errors are returned in a standard format:

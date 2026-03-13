@@ -63,14 +63,8 @@ cd Medi
    ```bash
    npm install
    ```
-3. Start the Vite dev server:
-   ```bash
-   npm run dev
-   ```
-
 The application should now be running! 
-- Frontend: `http://localhost:5173`
-- Backend: `http://localhost:5000`
+- API Base URL: `https://api-assignment-nu.vercel.app/api`
 
 ## 📁 Project Structure
 
