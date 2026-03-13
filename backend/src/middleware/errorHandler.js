@@ -3,12 +3,15 @@ const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
-  // Log to console for dev
-  console.error(err);
+  // Log to console for dev and monitoring
+  console.error('--- ERROR START ---');
+  console.error(`Message: ${err.message}`);
+  console.error(`Stack: ${err.stack}`);
+  console.error('--- ERROR END ---');
 
   // Mongoose bad ObjectId
   if (err.name === 'CastError') {
-    const message = `Resource not found / Invalid ID formatted`;
+    const message = `Resource not found / Invalid ID format`;
     error = { message, statusCode: 404 };
   }
 
@@ -21,6 +24,9 @@ const errorHandler = (err, req, res, next) => {
   res.status(error.statusCode || 500).json({
     success: false,
     error: error.message || 'Server Error',
+    // Include stack trace only in development to avoid security risks, 
+    // but for debugging this 500 error we might want to see it if the user allows.
+    // For now, let's keep it safe but log it to the server console (Vercel Logs).
   });
 };
 
